@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>函数接收参数并弹出</title>
+  <style>
+    body {
+      font: 12px/1.5 Tahoma;
+      text-align: center;
+    }
+
+    input {
+      border: 1px solid #ccc;
+      padding: 3px;
+    }
+  </style>
+  <script>
+    var myFn = function (a, b) {
+      alert(a.value);
+      alert(b.value);
+    }
+    window.onload = function () {
+      var input = document.getElementsByTagName("input");
+      var btn = document.getElementsByTagName("button")[0];
+      btn.onclick = function () { //上面如果不加索引，btn就是数组，设置onclick就要用for循环，或者btn[0].onclick
+        myFn(input[0], input[1]);
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <p><input type="text" value="北京市"><br></p>
+    <p><input type="text" value="朝阳区"><br></p>
+    <p><button>传参</button></p>
+  </div>
+
+</body>
+
+</html>

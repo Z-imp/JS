@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>鼠标移入/移出改变样式</title>
+  <style>
+    div {
+      font-size: 15px tahoma;
+      color: #fff;
+      margin-top: 10px;
+      padding: 20px;
+      width: 150px;
+      height: 150px;
+      background: #000;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var div = document.getElementsByTagName("div")[0];
+      div.onmouseover = function () {
+        div.style.color = "black";
+        div.style.background = "yellow";
+        div.style.border = "10px solid black";
+        div.innerHTML = "嗯，很乖很听话！<br>";
+      }
+      div.onmouseout = function () {
+        div.style.color = "#fff";
+        div.style.background = "red";
+        div.style.border = "10px solid black";
+        div.innerHTML = "看不到了吧！傻吊！哈哈哈哈哈哈哈哈！";
+      }
+    }
+  </script>
+</head>
+<body>
+  <center><div>鼠标移入该区域 然后再移出</div></center>
+  
+</body>
+</html>

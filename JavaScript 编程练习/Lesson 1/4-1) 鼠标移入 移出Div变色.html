@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>鼠标悬浮变色</title>
+  <style>
+    #outer {
+      width: 330px;
+      height: 100px;
+      margin: 10px auto;
+    }
+
+    #outer div {
+      float: left;
+      width: 100px;
+      height: 100px;
+      margin: 0 5px;
+      background: black;
+    }
+
+    p {
+      font: 14px/1.5 "consolas";
+      width: 200px;
+      padding: 3px;
+      border: 1px dotted #ccc;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var p = document.getElementsByTagName("p")[0];
+      var div = document.getElementById("outer").getElementsByTagName("div");
+      p.onmouseover = function () {
+        for (var i = 0; i < div.length; i++) div[i].style.background = "red";
+      }
+      p.onmouseout = function () {
+        for (var i = 0; i < div.length; i++) div[i].style.background = "green";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <center><p>鼠标移入变红色，移出再变绿色</p></center>
+  <div id="outer">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+
+</html>
